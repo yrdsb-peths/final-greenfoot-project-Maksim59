@@ -19,5 +19,7 @@ public class MyWorld extends World
         super(600, 400, 1);
         getBackground().setColor(Color.BLACK);
         getBackground().fill();
+        Ship ship = new Ship();
+        addObject(ship, 50, 50);
     }
 }
