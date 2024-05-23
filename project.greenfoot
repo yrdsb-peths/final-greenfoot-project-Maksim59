@@ -1,11 +1,14 @@
 #Greenfoot project file
 class.Ship.image=shipSprite.png
+dependency1.from=MyWorld
+dependency1.to=Ship
+dependency1.type=UsesDependency
 editor.fx.0.height=739
 editor.fx.0.width=816
-editor.fx.0.x=367
-editor.fx.0.y=98
+editor.fx.0.x=706
+editor.fx.0.y=67
 height=744
-package.numDependencies=0
+package.numDependencies=1
 package.numTargets=2
 project.charset=windows-1252
 publish.hasSource=false
