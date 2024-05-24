@@ -19,9 +19,25 @@ public class Ship extends Actor
     }
     public void act()
     {
-        if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("a"))
         {
-            myImage = new GreenfootImage("images/shipMoving.png");
+            setRotation(180);
+            move(3);
+        }
+        else if(Greenfoot.isKeyDown("d"))
+        {
+            setRotation(0);
+            move(3);
+        }
+        else if(Greenfoot.isKeyDown("w"))
+        {
+            setRotation(270);
+            move(3);
+        }
+        else if(Greenfoot.isKeyDown("s"))
+        {
+            setRotation(90);
+            move(3);
         }
     }
 }
