@@ -21,5 +21,11 @@ public class MyWorld extends World
         getBackground().fill();
         Ship ship = new Ship();
         addObject(ship, 50, 50);
+        addAsteroid();
+    }
+    
+    public void addAsteroid()
+    {
+        addObject(new Asteroid(), Greenfoot.getRandomNumber(1000), 0);
     }
 }
