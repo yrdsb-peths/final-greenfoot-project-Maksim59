@@ -39,5 +39,14 @@ public class Ship extends Actor
             setRotation(90);
             move(3);
         }
+        shoot();
     }
+    public void shoot()
+    {
+        if(Greenfoot.isKeyDown("space"))
+        {
+            getWorld().addObject(new Bullet(), getX(), getY());
+        }
+    }
+
 }
