@@ -12,16 +12,38 @@ public class Asteroid extends Actor
      * Act - do whatever the Asteroid wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public Asteroid()
+    {
+        setRotation(Greenfoot.getRandomNumber(360));
+    }
     public void act()
     {
-        setRotation(270);
+        
         move(-5);
-        MyWorld world = (MyWorld) getWorld();
-        if(getY() >= world.getHeight())
+        infiniteMove();
+
+    }
+    
+        public void infiniteMove()
+    {
+        if(getX() < 1)
         {
-            world.addAsteroid();
+            setLocation(getWorld().getWidth(), getY());
+        }
+        if(getX() > getWorld().getWidth())
+        {
+            setLocation(0, getY());
+        }
+        if(getY() < 1)
+        {
+            setLocation(getX(), getWorld().getHeight());
+        }
+        if(getY() > getWorld().getHeight())
+        {
+            setLocation(getX(), 0);
         }
     }
+
     
     
 }

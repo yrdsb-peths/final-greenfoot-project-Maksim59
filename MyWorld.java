@@ -26,6 +26,11 @@ public class MyWorld extends World
     
     public void addAsteroid()
     {
-        addObject(new Asteroid(), Greenfoot.getRandomNumber(1000), 0);
+        for(int i = 0; i < 3; i++)
+        {
+            addObject(new Asteroid(), Greenfoot.getRandomNumber(1000), 0);
+        }
     }
+    
+
 }
