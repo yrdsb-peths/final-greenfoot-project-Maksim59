@@ -43,12 +43,24 @@ public class Ship extends Actor
         {
             shoot();
         }
+        colide();
     }
+    
     public void shoot()
     {
-        Bullet bullet = new Bullet(5);
+        Bullet bullet = new Bullet(10);
         bullet.setRotation(getRotation());
         getWorld().addObject(bullet,getX(), getY());
+    }
+    
+    public void colide()
+    {
+        if(isTouching(Asteroid.class))
+        {
+            removeTouching(Asteroid.class);
+            getWorld().removeObject(this);
+
+        }
     }
 
 }

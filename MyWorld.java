@@ -16,11 +16,10 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 700, 1);
-        getBackground().setColor(Color.BLACK);
-        getBackground().fill();
+        super(800, 600, 1, false);
+        
         Ship ship = new Ship();
-        addObject(ship, 50, 50);
+        addObject(ship, 400,300);
         addAsteroid();
     }
     
@@ -28,7 +27,7 @@ public class MyWorld extends World
     {
         for(int i = 0; i < 3; i++)
         {
-            addObject(new Asteroid(), Greenfoot.getRandomNumber(1000), 0);
+            addObject(new Asteroid(), Greenfoot.getRandomNumber(800), 0);
         }
     }
     

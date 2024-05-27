@@ -21,12 +21,13 @@ public class Asteroid extends Actor
         
         move(-5);
         infiniteMove();
+        colide();
 
     }
     
-        public void infiniteMove()
+    public void infiniteMove()
     {
-        if(getX() < 1)
+        if(getX() < 0)
         {
             setLocation(getWorld().getWidth(), getY());
         }
@@ -34,13 +35,23 @@ public class Asteroid extends Actor
         {
             setLocation(0, getY());
         }
-        if(getY() < 1)
+        if(getY() < 0)
         {
             setLocation(getX(), getWorld().getHeight());
         }
         if(getY() > getWorld().getHeight())
         {
             setLocation(getX(), 0);
+        }
+    }
+    
+    public void colide()
+    {
+        if(isTouching(Bullet.class))
+        {
+            removeTouching(Bullet.class);
+            getWorld().removeObject(this);
+
         }
     }
 
