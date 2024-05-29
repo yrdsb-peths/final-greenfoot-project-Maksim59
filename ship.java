@@ -15,6 +15,7 @@ public class Ship extends Actor
     GreenfootImage myImage = getImage();
     public Ship()
     {
+        
         myImage.scale(50,50);
     }
     public void act()

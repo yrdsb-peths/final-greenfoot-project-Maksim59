@@ -13,7 +13,9 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    private Score scoreboard;
+    private int score;
+    private Label scoreLabel;
+    
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -21,8 +23,9 @@ public class MyWorld extends World
 
         Ship ship = new Ship();
         addObject(ship, 400,300);
+        scoreLabel = new Label(0,80);
+        addObject(scoreLabel, 50,50);
         addAsteroid();
-        prepare();
     }
 
     public void addAsteroid()
@@ -37,15 +40,11 @@ public class MyWorld extends World
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    private void prepare()
+    
+    public void increaseScore()
     {
-        Score scoreboard = new Score(0);
-        addObject(scoreboard, getWidth()/2, scoreboard.getImage().getHeight()/2);
-        
-        
-    }
-    public Score getScoreboard()
-    {
-        return scoreboard;
+        score++;
+        scoreLabel.setValue(score);
+
     }
 }
