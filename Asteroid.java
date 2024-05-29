@@ -53,6 +53,9 @@ public class Asteroid extends Actor
             removeTouching(Bullet.class);
             getWorld().removeObject(this);
             score++;
+            MyWorld myWorld= (MyWorld)getWorld();
+            Score scoreboard = myWorld.getScoreboard();
+            scoreboard.update(score);
         }
         
     }
