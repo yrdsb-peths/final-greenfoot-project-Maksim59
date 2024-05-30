@@ -34,6 +34,7 @@ public class StartScreen extends World
             Greenfoot.setWorld(gameWorld);
         }
     }
+    
     private void prepare()
     {
         Label label = new Label("Press <space> to start the game", 40);
@@ -54,5 +55,7 @@ public class StartScreen extends World
         label3.setLocation(179,249);
         label3.setLocation(156,250);
         label3.setLocation(160,236);
+        removeObject(ship);
+        removeObject(asteroid);
     }
 }

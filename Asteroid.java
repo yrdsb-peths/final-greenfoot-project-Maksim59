@@ -51,10 +51,10 @@ public class Asteroid extends Actor
         if(isTouching(Bullet.class))
         {
             removeTouching(Bullet.class);
-            getWorld().removeObject(this);
             score++;
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
+            world.removeObject(this);
         }
         
     }
