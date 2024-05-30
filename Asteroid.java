@@ -55,6 +55,7 @@ public class Asteroid extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
             world.removeObject(this);
+            world.addAsteroid();
         }
         
     }

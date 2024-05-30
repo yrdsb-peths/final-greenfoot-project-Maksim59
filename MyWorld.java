@@ -13,10 +13,10 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    private int score;
+    private int score = 0;
     private Label scoreLabel;
     private Label livesLabel;
-    private int lives;
+    private int lives = 3;
     
     public MyWorld()
     {    
@@ -25,20 +25,22 @@ public class MyWorld extends World
 
         Ship ship = new Ship();
         addObject(ship, 400,300);
-        scoreLabel = new Label(0,80);
+        scoreLabel = new Label(score,80);
         addObject(scoreLabel, 50,50);
-        livesLabel = new Label(3, 80);
+        livesLabel = new Label(lives, 80);
         addObject(livesLabel, 50,100);
         
-        addAsteroid();
+        for(int i = 0; i < 10; i++)
+        {
+            addAsteroid();
+        }
+        decreaseLives();
     }
 
     public void addAsteroid()
     {
-        for(int i = 0; i < 10; i++)
-        {
-            addObject(new Asteroid(), Greenfoot.getRandomNumber(800), 0);
-        }
+        addObject(new Asteroid(), Greenfoot.getRandomNumber(800), 0);
+
     }
 
     /**
@@ -54,6 +56,6 @@ public class MyWorld extends World
     }
     public void decreaseLives()
     {
-        lives--;
+        lives = lives-1;
     }
 }
