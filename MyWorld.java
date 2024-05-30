@@ -15,6 +15,8 @@ public class MyWorld extends World
      */
     private int score;
     private Label scoreLabel;
+    private Label livesLabel;
+    private int lives;
     
     public MyWorld()
     {    
@@ -25,6 +27,9 @@ public class MyWorld extends World
         addObject(ship, 400,300);
         scoreLabel = new Label(0,80);
         addObject(scoreLabel, 50,50);
+        livesLabel = new Label(3, 80);
+        addObject(livesLabel, 50,100);
+        
         addAsteroid();
     }
 
@@ -46,5 +51,9 @@ public class MyWorld extends World
         score++;
         scoreLabel.setValue(score);
 
+    }
+    public void decreaseLives()
+    {
+        lives--;
     }
 }
