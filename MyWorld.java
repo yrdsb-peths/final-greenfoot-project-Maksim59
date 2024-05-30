@@ -58,4 +58,10 @@ public class MyWorld extends World
     {
         lives = lives-1;
     }
+    
+    public void gameOver()
+    {
+        GameOver gameOverWorld = new GameOver();
+        Greenfoot.setWorld(gameOverWorld);
+    }
 }
