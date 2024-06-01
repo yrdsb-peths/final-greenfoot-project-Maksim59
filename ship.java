@@ -60,8 +60,8 @@ public class Ship extends Actor
         {
             MyWorld world = (MyWorld) getWorld();
             removeTouching(Asteroid.class);
-            getWorld().removeObject(this);
-            world.gameOver();
+            world.decreaseLives();
+            
             
         }
     }

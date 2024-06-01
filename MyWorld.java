@@ -16,7 +16,7 @@ public class MyWorld extends World
     private int score = 0;
     private Label scoreLabel;
     private Label livesLabel;
-    private int lives = 3;
+    private int lives = 4;
     
     public MyWorld()
     {    
@@ -35,6 +35,10 @@ public class MyWorld extends World
             addAsteroid();
         }
         decreaseLives();
+        
+
+        gameOver();
+
     }
 
     public void addAsteroid()
@@ -57,11 +61,19 @@ public class MyWorld extends World
     public void decreaseLives()
     {
         lives = lives-1;
+        livesLabel.setValue(lives);
     }
     
     public void gameOver()
     {
+
         GameOver gameOverWorld = new GameOver();
         Greenfoot.setWorld(gameOverWorld);
+
+    }
+    
+    public int getLives()
+    {
+        return lives;
     }
 }
