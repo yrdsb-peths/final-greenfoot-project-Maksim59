@@ -13,10 +13,12 @@ public class Ship extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootImage myImage = getImage();
+    GreenfootImage moveImage = new GreenfootImage("images/shipMoving.png");
     public Ship()
     {
         
         myImage.scale(50,50);
+        moveImage.scale(50,50);
     }
     public void act()
     {
@@ -24,25 +26,33 @@ public class Ship extends Actor
         {
             setRotation(180);
             move(3);
+            setImage(moveImage);
         }
         else if(Greenfoot.isKeyDown("d"))
         {
             setRotation(0);
             move(3);
+            setImage(moveImage);
         }
         else if(Greenfoot.isKeyDown("w"))
         {
             setRotation(270);
             move(3);
+            setImage(moveImage);
         }
         else if(Greenfoot.isKeyDown("s"))
         {
             setRotation(90);
             move(3);
+            setImage(moveImage);
         }
         else if(Greenfoot.isKeyDown("space"))
         {
             shoot();
+        }
+        else
+        {
+            setImage(myImage);
         }
         colide();
     }
