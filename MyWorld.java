@@ -35,9 +35,6 @@ public class MyWorld extends World
             addAsteroid();
         }
         decreaseLives();
-        
-
-        gameOver();
 
     }
 

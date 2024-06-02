@@ -14,6 +14,7 @@ public class Ship extends Actor
      */
     GreenfootImage myImage = getImage();
     GreenfootImage moveImage = new GreenfootImage("images/shipMoving.png");
+    MyWorld world = (MyWorld) getWorld();
     public Ship()
     {
         
@@ -22,6 +23,7 @@ public class Ship extends Actor
     }
     public void act()
     {
+        MyWorld world = (MyWorld) getWorld();
         if(Greenfoot.isKeyDown("a"))
         {
             setRotation(180);
@@ -55,6 +57,11 @@ public class Ship extends Actor
             setImage(myImage);
         }
         colide();
+        if(world.getLives() == 0)
+        {
+            world.gameOver();
+        }
+        
     }
     
     public void shoot()
