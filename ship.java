@@ -15,6 +15,7 @@ public class Ship extends Actor
     GreenfootImage myImage = getImage();
     GreenfootImage moveImage = new GreenfootImage("images/shipMoving.png");
     MyWorld world = (MyWorld) getWorld();
+    int transp = 200;
     public Ship()
     {
         
@@ -79,7 +80,8 @@ public class Ship extends Actor
             removeTouching(Asteroid.class);
             world.decreaseLives();
             world.addAsteroid();
-            
+            transp -= 20;
+            myImage.setTransparency(transp);
             
         }
     }
