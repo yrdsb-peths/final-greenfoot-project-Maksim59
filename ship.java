@@ -48,7 +48,7 @@ public class Ship extends Actor
             move(3);
             setImage(moveImage);
         }
-        else if(Greenfoot.isKeyDown("space"))
+        else if("space".equals(Greenfoot.getKey()))
         {
             shoot();
         }
@@ -78,6 +78,7 @@ public class Ship extends Actor
             MyWorld world = (MyWorld) getWorld();
             removeTouching(Asteroid.class);
             world.decreaseLives();
+            world.addAsteroid();
             
             
         }

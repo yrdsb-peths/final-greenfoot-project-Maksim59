@@ -13,12 +13,18 @@ public class Asteroid extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int score = 0;
-    public Asteroid()
+    int size;
+    boolean isSmall = false;
+    public Asteroid(int size, boolean isSmall)
     {
         setRotation(Greenfoot.getRandomNumber(360));
+        this.size = size;
+        isSmall = isSmall;
     }
     public void act()
     {
+        GreenfootImage myImage = getImage();
+        myImage.scale(size,size);
         
         move(-5);
         infiniteMove();
@@ -54,10 +60,24 @@ public class Asteroid extends Actor
             score++;
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
+            if(isSmall == false)
+            {
+                splitOff();
+            }
+            else
+            {
+                world.addAsteroid();
+            }
             world.removeObject(this);
-            world.addAsteroid();
+
         }
-        
+    }
+    public void splitOff()
+    {
+        Asteroid smallAstOne = new Asteroid(25, true);
+        Asteroid smallAstTwo = new Asteroid(25, true);
+        getWorld().addObject(smallAstOne, getX(), getY());
+        getWorld().addObject(smallAstTwo, getX(), getY());
     }
 
     

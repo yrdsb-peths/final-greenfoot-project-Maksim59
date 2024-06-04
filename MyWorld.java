@@ -30,17 +30,16 @@ public class MyWorld extends World
         livesLabel = new Label(lives, 80);
         addObject(livesLabel, 50,100);
         
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 6; i++)
         {
             addAsteroid();
         }
         decreaseLives();
-
     }
 
     public void addAsteroid()
     {
-        addObject(new Asteroid(), Greenfoot.getRandomNumber(800), 0);
+        addObject(new Asteroid(50, false), Greenfoot.getRandomNumber(800), 0);
 
     }
 
@@ -51,7 +50,7 @@ public class MyWorld extends World
     
     public void increaseScore()
     {
-        score++;
+        score+=100;
         scoreLabel.setValue(score);
 
     }
@@ -73,4 +72,6 @@ public class MyWorld extends World
     {
         return lives;
     }
+    
+    
 }
