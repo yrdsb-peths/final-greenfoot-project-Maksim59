@@ -14,6 +14,7 @@ public class Ship extends Actor
      */
     GreenfootImage myImage = getImage();
     GreenfootImage moveImage = new GreenfootImage("images/shipMoving.png");
+    GreenfootSound shootSound = new GreenfootSound("sounds/shot.mp3");
     MyWorld world = (MyWorld) getWorld();
     int transp = 200;
     public Ship()
@@ -70,6 +71,7 @@ public class Ship extends Actor
         Bullet bullet = new Bullet(10);
         bullet.setRotation(getRotation());
         getWorld().addObject(bullet,getX(), getY());
+        shootSound.play();
     }
     
     public void colide()
