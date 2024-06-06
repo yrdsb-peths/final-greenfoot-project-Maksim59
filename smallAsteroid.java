@@ -14,6 +14,10 @@ public class smallAsteroid extends Actor
      */
     int score = 0;
     GreenfootSound breakSound = new GreenfootSound("sounds/rockbreak.mp3");
+    public smallAsteroid()
+    {
+        setRotation(Greenfoot.getRandomNumber(360));
+    }
     public void act()
     {
         GreenfootImage myImage = getImage();
@@ -52,11 +56,8 @@ public class smallAsteroid extends Actor
             score++;
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
-            world.addAsteroid();
             breakSound.play();
             world.removeObject(this);
-            
-
         }
     }
 }

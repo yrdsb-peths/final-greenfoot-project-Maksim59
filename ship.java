@@ -86,6 +86,17 @@ public class Ship extends Actor
             myImage.setTransparency(transp);
             
         }
+        
+        if(isTouching(smallAsteroid.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            removeTouching(Asteroid.class);
+            world.decreaseLives();
+            world.addAsteroid();
+            transp -= 20;
+            myImage.setTransparency(transp);
+            
+        }
     }
 
 }

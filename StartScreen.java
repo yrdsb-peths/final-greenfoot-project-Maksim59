@@ -17,8 +17,6 @@ public class StartScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
-        Label startLabel = new Label("ASTEROIDS",80);
-        addObject(startLabel, 400,50);
         prepare();
     }
     
@@ -37,25 +35,11 @@ public class StartScreen extends World
     
     private void prepare()
     {
-        Label label = new Label("Press <space> to start the game", 40);
-        addObject(label,551,186);
-        label.setLocation(275,110);
-        Ship ship = new Ship();
-        addObject(ship,720,203);
-        ship.setLocation(724,81);
-        ship.setLocation(739,83);
+
         Asteroid asteroid = new Asteroid();
-        addObject(asteroid,118,216);
-        asteroid.setLocation(77,16);
-        Label label2 = new Label("WASD to move", 30);
-        addObject(label2,53,208);
-        label2.setLocation(130,201);
-        Label label3 = new Label("and <space> to shoot", 30);
-        addObject(label3,47,247);
-        label3.setLocation(179,249);
-        label3.setLocation(156,250);
-        label3.setLocation(160,236);
-        removeObject(ship);
+        addObject(asteroid,622,252);
+        StartButton startButton = new StartButton();
+        addObject(startButton,722,330);
         removeObject(asteroid);
     }
 }

@@ -30,7 +30,7 @@ public class MyWorld extends World
         livesLabel = new Label(lives, 80);
         addObject(livesLabel, 50,100);
         
-        for(int i = 0; i < 6; i++)
+        for(int i = 0; i < 4; i++)
         {
             addAsteroid();
         }

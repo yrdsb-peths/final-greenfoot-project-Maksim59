@@ -69,8 +69,8 @@ public class Asteroid extends Actor
     }
     public void splitOff()
     {
-        Asteroid smallAstOne = new Asteroid();
-        Asteroid smallAstTwo = new Asteroid();
+        smallAsteroid smallAstOne = new smallAsteroid();
+        smallAsteroid smallAstTwo = new smallAsteroid();
         getWorld().addObject(smallAstOne, getX(), getY());
         getWorld().addObject(smallAstTwo, getX(), getY());
     }
