@@ -41,5 +41,7 @@ public class StartScreen extends World
         StartButton startButton = new StartButton();
         addObject(startButton,722,330);
         removeObject(asteroid);
+        RulesButton rulesButton = new RulesButton();
+        addObject(rulesButton,119,366);
     }
 }
