@@ -16,7 +16,6 @@ public class Ship extends Actor
     GreenfootImage moveImage = new GreenfootImage("images/shipMoving.png");
     GreenfootSound shootSound = new GreenfootSound("sounds/shot (2).mp3");
     MyWorld world = (MyWorld) getWorld();
-    int transp = 200;
     public Ship()
     {
         
@@ -82,19 +81,15 @@ public class Ship extends Actor
             removeTouching(Asteroid.class);
             world.decreaseLives();
             world.addAsteroid();
-            transp -= 20;
-            myImage.setTransparency(transp);
             
         }
         
         if(isTouching(smallAsteroid.class))
         {
             MyWorld world = (MyWorld) getWorld();
-            removeTouching(Asteroid.class);
+            removeTouching(smallAsteroid.class);
             world.decreaseLives();
             world.addAsteroid();
-            transp -= 20;
-            myImage.setTransparency(transp);
             
         }
     }

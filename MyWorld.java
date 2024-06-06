@@ -16,8 +16,11 @@ public class MyWorld extends World
     private int score = 0;
     private Label scoreLabel;
     private Label livesLabel;
-    private int lives = 4;
-    
+    private int lives = 3;
+    Lives live1 = new Lives();
+    Lives live2 = new Lives();
+    Lives live3 = new Lives();
+
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -30,11 +33,13 @@ public class MyWorld extends World
         livesLabel = new Label(lives, 80);
         addObject(livesLabel, 50,100);
         
+        addObject(live1,325,35);
+        addObject(live2,400,35);
+        addObject(live3,475,35);
         for(int i = 0; i < 4; i++)
         {
             addAsteroid();
         }
-        decreaseLives();
     }
 
     public void addAsteroid()
@@ -47,19 +52,33 @@ public class MyWorld extends World
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    
+
     public void increaseScore()
     {
         score+=100;
         scoreLabel.setValue(score);
 
     }
+
     public void decreaseLives()
     {
         lives = lives-1;
         livesLabel.setValue(lives);
+        if(lives == 2)
+        {
+            live1.loseLive();
+        }
+        if(lives == 1)
+        {
+            live2.loseLive();
+        }
+        if(lives == 0)
+        {
+            live3.loseLive();
+        }
+        
     }
-    
+
     public void gameOver()
     {
 
@@ -67,11 +86,31 @@ public class MyWorld extends World
         Greenfoot.setWorld(gameOverWorld);
 
     }
-    
+
     public int getLives()
     {
         return lives;
     }
+
+    public void addLiveOne()
+    {
+        addObject(live1,325,35);
+    }
+
+    public void addLiveTwo()
+    {
+        addObject(live2,400,35);
+    }
     
+    public void addLiveThree()
+    {
+        addObject(live3,475,35);
+    }
+    
+    public void increaseSmallScore()
+    {
+        score+=50;
+    }
+
     
 }

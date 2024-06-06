@@ -12,7 +12,6 @@ public class Asteroid extends Actor
      * Act - do whatever the Asteroid wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int score = 0;
     int size;
     boolean isSmall = false;
     GreenfootSound breakSound = new GreenfootSound("sounds/rockbreak.mp3");
@@ -56,7 +55,6 @@ public class Asteroid extends Actor
         if(isTouching(Bullet.class))
         {
             removeTouching(Bullet.class);
-            score++;
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
             splitOff();
