@@ -13,11 +13,11 @@ public class Lives extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootSound popSound = new GreenfootSound("sounds/pop.mp3");
-    GreenfootImage[]  idle = new GreenfootImage[6];
+    GreenfootImage[]  idle = new GreenfootImage[5];
     SimpleTimer animationTimer = new SimpleTimer();
     public Lives()
     {
-        for(int i = 1; i < 6; i++)
+        for(int i = 0; i < 5; i++)
         {
             idle[i] = new GreenfootImage("images/heartAni/heart" + i + ".png");
             idle[i].scale(50,50);
