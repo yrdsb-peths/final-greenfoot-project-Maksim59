@@ -44,7 +44,7 @@ public class StartScreen extends World
         addObject(ship,720,203);
         ship.setLocation(724,81);
         ship.setLocation(739,83);
-        Asteroid asteroid = new Asteroid(50, false);
+        Asteroid asteroid = new Asteroid();
         addObject(asteroid,118,216);
         asteroid.setLocation(77,16);
         Label label2 = new Label("WASD to move", 30);

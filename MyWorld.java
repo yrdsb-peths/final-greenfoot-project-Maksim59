@@ -39,7 +39,7 @@ public class MyWorld extends World
 
     public void addAsteroid()
     {
-        addObject(new Asteroid(50, false), Greenfoot.getRandomNumber(800), 0);
+        addObject(new Asteroid(), Greenfoot.getRandomNumber(800), 0);
 
     }
 

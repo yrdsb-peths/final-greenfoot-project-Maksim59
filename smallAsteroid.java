@@ -1,34 +1,27 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Asteroid here.
+ * Write a description of class smallAsteroid here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Asteroid extends Actor
+public class smallAsteroid extends Actor
 {
     /**
-     * Act - do whatever the Asteroid wants to do. This method is called whenever
+     * Act - do whatever the smallAsteroid wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int score = 0;
-    int size;
-    boolean isSmall = false;
     GreenfootSound breakSound = new GreenfootSound("sounds/rockbreak.mp3");
-    public Asteroid()
-    {
-        setRotation(Greenfoot.getRandomNumber(360));
-    }
     public void act()
     {
         GreenfootImage myImage = getImage();
-        myImage.scale(50,50);
+        myImage.scale(25,25);
         
         move(-5);
         infiniteMove();
         colide();
-
     }
     
     public void infiniteMove()
@@ -59,7 +52,6 @@ public class Asteroid extends Actor
             score++;
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
-            splitOff();
             world.addAsteroid();
             breakSound.play();
             world.removeObject(this);
@@ -67,14 +59,4 @@ public class Asteroid extends Actor
 
         }
     }
-    public void splitOff()
-    {
-        Asteroid smallAstOne = new Asteroid();
-        Asteroid smallAstTwo = new Asteroid();
-        getWorld().addObject(smallAstOne, getX(), getY());
-        getWorld().addObject(smallAstTwo, getX(), getY());
-    }
-
-    
-    
 }

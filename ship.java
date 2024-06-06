@@ -14,7 +14,7 @@ public class Ship extends Actor
      */
     GreenfootImage myImage = getImage();
     GreenfootImage moveImage = new GreenfootImage("images/shipMoving.png");
-    GreenfootSound shootSound = new GreenfootSound("sounds/shot.mp3");
+    GreenfootSound shootSound = new GreenfootSound("sounds/shot (2).mp3");
     MyWorld world = (MyWorld) getWorld();
     int transp = 200;
     public Ship()
