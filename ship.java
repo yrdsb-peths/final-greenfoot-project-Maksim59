@@ -14,15 +14,17 @@ public class Ship extends Actor
      */
     GreenfootImage myImage = getImage();
     GreenfootImage moveImage = new GreenfootImage("images/shipMoving.png");
+    GreenfootImage regenImage = new GreenfootImage("images/regen.png");
     GreenfootSound shootSound = new GreenfootSound("sounds/shot (2).mp3");
+    GreenfootSound regenSound = new GreenfootSound("sounds/regen.mp3");
     MyWorld world = (MyWorld) getWorld();
-    public static SimpleTimer myTimer = new SimpleTimer();
     boolean isDead = false;
     public Ship()
     {
         
         myImage.scale(50,50);
         moveImage.scale(50,50);
+        regenImage.scale(50,50);
     }
     public void act()
     {
@@ -88,7 +90,8 @@ public class Ship extends Actor
                 removeTouching(Asteroid.class);
                 world.decreaseLives();
                 world.addAsteroid();
-                
+                regen();
+                Greenfoot.stop();
             }
             
             if(isTouching(smallAsteroid.class))
@@ -97,9 +100,19 @@ public class Ship extends Actor
                 removeTouching(smallAsteroid.class);
                 world.decreaseLives();
                 world.addAsteroid();
-                
+                regen();
+                Greenfoot.stop();
+                setImage(myImage);
             }
         }
+    }
+    
+    public void regen()
+    {
+        setImage(regenImage);
+        regenSound.play();
+        setLocation(400,300);
+        
     }
 
 }

@@ -19,7 +19,7 @@ public class MyWorld extends World
     Lives live1 = new Lives();
     Lives live2 = new Lives();
     Lives live3 = new Lives();
-
+    public static SimpleTimer myTimer = new SimpleTimer();
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
