@@ -15,7 +15,6 @@ public class MyWorld extends World
      */
     private int score = 0;
     private Label scoreLabel;
-    private Label livesLabel;
     private int lives = 3;
     Lives live1 = new Lives();
     Lives live2 = new Lives();
@@ -30,9 +29,6 @@ public class MyWorld extends World
         addObject(ship, 400,300);
         scoreLabel = new Label(score,80);
         addObject(scoreLabel, 50,50);
-        livesLabel = new Label(lives, 80);
-        addObject(livesLabel, 50,100);
-        
         addObject(live1,325,35);
         addObject(live2,400,35);
         addObject(live3,475,35);
@@ -63,7 +59,6 @@ public class MyWorld extends World
     public void decreaseLives()
     {
         lives = lives-1;
-        livesLabel.setValue(lives);
         if(lives == 2)
         {
             live1.loseLive();

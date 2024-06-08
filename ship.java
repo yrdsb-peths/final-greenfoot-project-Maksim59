@@ -16,6 +16,8 @@ public class Ship extends Actor
     GreenfootImage moveImage = new GreenfootImage("images/shipMoving.png");
     GreenfootSound shootSound = new GreenfootSound("sounds/shot (2).mp3");
     MyWorld world = (MyWorld) getWorld();
+    public static SimpleTimer myTimer = new SimpleTimer();
+    boolean isDead = false;
     public Ship()
     {
         
@@ -67,30 +69,36 @@ public class Ship extends Actor
     
     public void shoot()
     {
-        Bullet bullet = new Bullet(10);
-        bullet.setRotation(getRotation());
-        getWorld().addObject(bullet,getX(), getY());
-        shootSound.play();
+        if(isDead == false)
+        {
+            Bullet bullet = new Bullet(10);
+            bullet.setRotation(getRotation());
+            getWorld().addObject(bullet,getX(), getY());
+            shootSound.play();
+        }
     }
     
     public void colide()
     {
-        if(isTouching(Asteroid.class))
+        if(isDead == false)
         {
-            MyWorld world = (MyWorld) getWorld();
-            removeTouching(Asteroid.class);
-            world.decreaseLives();
-            world.addAsteroid();
+            if(isTouching(Asteroid.class))
+            {
+                MyWorld world = (MyWorld) getWorld();
+                removeTouching(Asteroid.class);
+                world.decreaseLives();
+                world.addAsteroid();
+                
+            }
             
-        }
-        
-        if(isTouching(smallAsteroid.class))
-        {
-            MyWorld world = (MyWorld) getWorld();
-            removeTouching(smallAsteroid.class);
-            world.decreaseLives();
-            world.addAsteroid();
-            
+            if(isTouching(smallAsteroid.class))
+            {
+                MyWorld world = (MyWorld) getWorld();
+                removeTouching(smallAsteroid.class);
+                world.decreaseLives();
+                world.addAsteroid();
+                
+            }
         }
     }
 
