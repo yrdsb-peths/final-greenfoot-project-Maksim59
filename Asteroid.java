@@ -63,14 +63,15 @@ public class Asteroid extends Actor
             world.addAsteroid();
             breakSound.play();
             world.removeObject(this);
-            
+            world.increaseLevel();
+            world.increaseLevel();
 
         }
     }
     public void splitOff()
     {
-        smallAsteroid smallAstOne = new smallAsteroid();
-        smallAsteroid smallAstTwo = new smallAsteroid();
+        smallAsteroid smallAstOne = new smallAsteroid(-3);
+        smallAsteroid smallAstTwo = new smallAsteroid(-3);
         getWorld().addObject(smallAstOne, getX(), getY());
         getWorld().addObject(smallAstTwo, getX(), getY());
     }

@@ -13,9 +13,11 @@ public class smallAsteroid extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootSound breakSound = new GreenfootSound("sounds/rockbreak.mp3");
-    public smallAsteroid()
+    public int speedAst;
+    public smallAsteroid(int speed)
     {
         setRotation(Greenfoot.getRandomNumber(360));
+        speedAst = speed;
     }
     public void act()
     {

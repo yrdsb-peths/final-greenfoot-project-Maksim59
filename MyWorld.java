@@ -20,6 +20,7 @@ public class MyWorld extends World
     Lives live2 = new Lives();
     Lives live3 = new Lives();
     public static SimpleTimer myTimer = new SimpleTimer();
+    public int speed = -2;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -40,7 +41,7 @@ public class MyWorld extends World
 
     public void addAsteroid()
     {
-        addObject(new Asteroid(-5), Greenfoot.getRandomNumber(800), 0);
+        addObject(new Asteroid(speed), Greenfoot.getRandomNumber(800), 0);
 
     }
 
@@ -106,6 +107,24 @@ public class MyWorld extends World
     {
         myTimer.mark();
     }
+    
+    public void increaseLevel()
+    {
+        if(score == 500)
+        {
+            speed-=1;
+        }
+        if(score == 1000)
+        {
+            speed-=3;
+        }
+        else if(score % 1000 == 0)
+        {
+            speed-=1;
+        }
+    }
+    
+    
 
     
 }
