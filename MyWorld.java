@@ -122,6 +122,10 @@ public class MyWorld extends World
         {
             speed-=1;
         }
+        else
+        {
+            
+        }
     }
     
     
