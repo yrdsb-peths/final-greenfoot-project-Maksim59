@@ -64,7 +64,7 @@ public class Asteroid extends Actor
             breakSound.play();
             world.removeObject(this);
             world.increaseLevel();
-            world.increaseLevel();
+            
 
         }
     }
