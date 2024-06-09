@@ -40,14 +40,9 @@ public class MyWorld extends World
 
     public void addAsteroid()
     {
-        addObject(new Asteroid(), Greenfoot.getRandomNumber(800), 0);
+        addObject(new Asteroid(-5), Greenfoot.getRandomNumber(800), 0);
 
     }
-
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
 
     public void increaseScore()
     {
@@ -105,6 +100,11 @@ public class MyWorld extends World
     public void increaseSmallScore()
     {
         score+=50;
+    }
+    
+    public void startTime()
+    {
+        myTimer.mark();
     }
 
     

@@ -31,7 +31,7 @@ public class StartScreen extends World
     private void prepare()
     {
 
-        Asteroid asteroid = new Asteroid();
+        Asteroid asteroid = new Asteroid(-5);
         addObject(asteroid,622,252);
         StartButton startButton = new StartButton();
         addObject(startButton,722,330);

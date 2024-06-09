@@ -14,9 +14,11 @@ public class Asteroid extends Actor
      */
     int size;
     boolean isSmall = false;
+    public int speedAst;
     GreenfootSound breakSound = new GreenfootSound("sounds/rockbreak.mp3");
-    public Asteroid()
+    public Asteroid(int speed)
     {
+        speedAst = speed;
         setRotation(Greenfoot.getRandomNumber(360));
     }
     public void act()
@@ -24,7 +26,7 @@ public class Asteroid extends Actor
         GreenfootImage myImage = getImage();
         myImage.scale(50,50);
         
-        move(-5);
+        move(speedAst);
         infiniteMove();
         colide();
 

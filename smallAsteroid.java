@@ -51,11 +51,18 @@ public class smallAsteroid extends Actor
     {
         if(isTouching(Bullet.class))
         {
+            setLocation(getX(), 0);
             removeTouching(Bullet.class);
             MyWorld world = (MyWorld) getWorld();
             world.increaseSmallScore();
             breakSound.play();
             world.removeObject(this);
         }
+    }
+    
+    
+    public void reset()
+    {
+        setLocation(getX(), 0);
     }
 }

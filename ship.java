@@ -82,37 +82,29 @@ public class Ship extends Actor
     
     public void colide()
     {
-        if(isDead == false)
+        if(isTouching(Asteroid.class))
         {
-            if(isTouching(Asteroid.class))
-            {
-                MyWorld world = (MyWorld) getWorld();
-                removeTouching(Asteroid.class);
-                world.decreaseLives();
-                world.addAsteroid();
-                regen();
-                Greenfoot.stop();
-            }
+            MyWorld world = (MyWorld) getWorld();
+            removeTouching(Asteroid.class);
+            world.decreaseLives();
+            world.addAsteroid();
+            regen();
+        }
             
-            if(isTouching(smallAsteroid.class))
-            {
-                MyWorld world = (MyWorld) getWorld();
-                removeTouching(smallAsteroid.class);
-                world.decreaseLives();
-                world.addAsteroid();
-                regen();
-                Greenfoot.stop();
-                setImage(myImage);
-            }
+        if(isTouching(smallAsteroid.class))
+        {
+            MyWorld world = (MyWorld) getWorld();
+            removeTouching(smallAsteroid.class);
+            world.decreaseLives();
+            world.addAsteroid();
+            regen();
         }
     }
     
     public void regen()
     {
+        MyWorld myWorld = (MyWorld) getWorld();
         setImage(regenImage);
         regenSound.play();
-        setLocation(400,300);
-        
     }
-
 }
