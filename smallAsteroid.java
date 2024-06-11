@@ -59,6 +59,7 @@ public class smallAsteroid extends Actor
             world.increaseSmallScore();
             breakSound.play();
             world.removeObject(this);
+            
         }
     }
     

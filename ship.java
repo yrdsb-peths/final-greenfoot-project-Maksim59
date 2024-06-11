@@ -56,7 +56,7 @@ public class Ship extends Actor
         }
         else 
         {
-            
+            setImage(myImage);
         }
         colide();
         if(world.getLives() == 0)

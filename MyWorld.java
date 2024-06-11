@@ -30,7 +30,7 @@ public class MyWorld extends World
         Ship ship = new Ship();
         addObject(ship, 400,300);
         scoreLabel = new Label(score,80);
-        addObject(scoreLabel, 50,50);
+        addObject(scoreLabel, 100,50);
         addObject(live1,325,35);
         addObject(live2,400,35);
         addObject(live3,475,35);
@@ -108,6 +108,11 @@ public class MyWorld extends World
     public void increaseSmallScore()
     {
         score+=5;
+        scoreLabel.setValue(score);
+        if(score > highestScore)
+        {
+            highestScore = score;
+        }
     }
     
     public void startTime()
