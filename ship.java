@@ -14,17 +14,14 @@ public class Ship extends Actor
      */
     GreenfootImage myImage = getImage();
     GreenfootImage moveImage = new GreenfootImage("images/shipMoving.png");
-    GreenfootImage regenImage = new GreenfootImage("images/regen.png");
     GreenfootSound shootSound = new GreenfootSound("sounds/shot (2).mp3");
     GreenfootSound regenSound = new GreenfootSound("sounds/regen.mp3");
     MyWorld world = (MyWorld) getWorld();
     boolean isDead = false;
     public Ship()
     {
-        
         myImage.scale(50,50);
         moveImage.scale(50,50);
-        regenImage.scale(50,50);
     }
     public void act()
     {
@@ -57,9 +54,9 @@ public class Ship extends Actor
         {
             shoot();
         }
-        else
+        else 
         {
-            setImage(myImage);
+            
         }
         colide();
         if(world.getLives() == 0)
@@ -103,8 +100,8 @@ public class Ship extends Actor
     
     public void regen()
     {
-        MyWorld myWorld = (MyWorld) getWorld();
-        setImage(regenImage);
+        setLocation(400, 300);
         regenSound.play();
+        
     }
 }

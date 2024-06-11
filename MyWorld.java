@@ -21,6 +21,7 @@ public class MyWorld extends World
     Lives live3 = new Lives();
     public static SimpleTimer myTimer = new SimpleTimer();
     public int speed = -2;
+    public static int highestScore = 0;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -33,6 +34,8 @@ public class MyWorld extends World
         addObject(live1,325,35);
         addObject(live2,400,35);
         addObject(live3,475,35);
+        Label highestScoreLabel = new Label("HighScore:" + MyWorld.getHighestScore(),30);
+        addObject(highestScoreLabel, 700, 35);
         for(int i = 0; i < 4; i++)
         {
             addAsteroid();
@@ -47,8 +50,12 @@ public class MyWorld extends World
 
     public void increaseScore()
     {
-        score+=100;
+        score+=10;
         scoreLabel.setValue(score);
+        if(score > highestScore)
+        {
+            highestScore = score;
+        }
 
     }
 
@@ -100,7 +107,7 @@ public class MyWorld extends World
     
     public void increaseSmallScore()
     {
-        score+=50;
+        score+=5;
     }
     
     public void startTime()
@@ -110,15 +117,15 @@ public class MyWorld extends World
     
     public void increaseLevel()
     {
-        if(score == 500)
+        if(score == 50)
         {
             speed-=1;
         }
-        if(score == 1000)
+        if(score == 100)
         {
             speed-=3;
         }
-        else if(score % 1000 == 0)
+        else if(score % 150 == 0)
         {
             speed-=1;
         }
@@ -128,6 +135,11 @@ public class MyWorld extends World
         }
     }
     
+    
+    public static int getHighestScore()
+    {
+        return highestScore;
+    }
     
 
     
