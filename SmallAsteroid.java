@@ -2,10 +2,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class smallAsteroid here.
- * Write a description of class SmallAsteroid here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Acts as a projectile that does damage to the ship. This one is smaller
+ * and only occurs when it splits off a bigger asteroid
+ * 
+ * @author (Maksim Isayenka) 
+ * @version (2024-06-12)
  * */
 public class SmallAsteroid extends Actor
 {
@@ -31,6 +33,8 @@ public class SmallAsteroid extends Actor
         colide();
     }
     
+    /*makes it so that the asteroid keeps moving and when reaching the end
+    of the screen it appears at the opposite end*/
     public void infiniteMove()
     {
         if(getX() < 0)
@@ -51,6 +55,7 @@ public class SmallAsteroid extends Actor
         }
     }
     
+    //checks if the small asteroid colides with the bullet
     public void colide()
     {
         if(isTouching(Bullet.class))
@@ -65,10 +70,4 @@ public class SmallAsteroid extends Actor
         }
     }
     
-    
-    public void reset()
-    {
-        setLocation(getX(), 0);
-        // Add your action code here.
-    }
 }

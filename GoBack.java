@@ -3,8 +3,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class GoBack here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Button so that when you enter the start screen and click on the instructions
+ * you have a button to go back to the start screen
+ * 
+ * @author (Maksim Isayenka) 
+ * @version (2024-06-12)
  */
 public class GoBack extends Actor
 {

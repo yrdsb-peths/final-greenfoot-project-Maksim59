@@ -3,8 +3,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class RulesButton here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Button that displays the rules of the game on the start screen
+ * 
+ * @author (Maksim Isayenka) 
+ * @version (2024-06-12)
  */
 public class RulesButton extends Actor
 {

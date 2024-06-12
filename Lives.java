@@ -3,8 +3,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Lives here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A class that displays the amount of lives you have using hearts.
+ * 
+ * @author (Maksim Isayenka) 
+ * @version (2024-06-12)
  */
 public class Lives extends Actor
 {
@@ -28,6 +30,7 @@ public class Lives extends Actor
         animateLives();
     }
     
+    // makes it so that it removes a heart if you lose a life
     public void loseLive()
     {
         MyWorld world = (MyWorld) getWorld();
@@ -35,6 +38,7 @@ public class Lives extends Actor
         popSound.play();
     }
     int imageIndex = 0;
+    //method to animate the hearts
      public void animateLives()
     {
         if(animationTimer.millisElapsed() < 180)

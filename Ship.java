@@ -3,9 +3,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Ship here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+ * Class of the ship and has methods which allows you to move around and shoot.
+ * 
+ *@author (Maksim Isayenka) 
+ * @version (2024-06-12) */
 public class Ship extends Actor
 {
     /**
@@ -26,6 +27,7 @@ public class Ship extends Actor
     public void act()
     {
         MyWorld world = (MyWorld) getWorld();
+        // key controls for the ship
         if(Greenfoot.isKeyDown("a"))
         {
             setRotation(180);
@@ -59,6 +61,7 @@ public class Ship extends Actor
             setImage(myImage);
         }
         colide();
+        //adds the game over screen
         if(world.getLives() == 0)
         {
             world.gameOver();
@@ -66,6 +69,7 @@ public class Ship extends Actor
         
     }
     
+    //shoot method for the ship which shoots a bullet
     public void shoot()
     {
         if(isDead == false)
@@ -77,6 +81,7 @@ public class Ship extends Actor
         }
     }
     
+    //coliding method that checks if the ship hits a small or big asteroid
     public void colide()
     {
         if(isTouching(Asteroid.class))
@@ -98,6 +103,7 @@ public class Ship extends Actor
         }
     }
     
+    //resets the ship back to the middle when colided
     public void regen()
     {
         setLocation(400, 300);

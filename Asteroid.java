@@ -3,24 +3,30 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Asteroid here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Asteroid class which acts as the projectile the ship has to dodge/shoot
+ * 
+ * @author (Maksim Isayenka) 
+ * @version (2024-06-12)
  */
 public class Asteroid extends Actor
 {
-    /**
-     * Act - do whatever the Asteroid wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    
     int size;
     boolean isSmall = false;
     public int speedAst;
     GreenfootSound breakSound = new GreenfootSound("sounds/rockbreak.mp3");
+    
+    //Asteroid constructor
     public Asteroid(int speed)
     {
         speedAst = speed;
         setRotation(Greenfoot.getRandomNumber(360));
     }
+    
+    /**
+     * Act - do whatever the Asteroid wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         GreenfootImage myImage = getImage();
@@ -32,8 +38,12 @@ public class Asteroid extends Actor
 
     }
     
+    /* /*makes it so that the asteroid keeps moving and when reaching the end
+    of the screen it appears at the opposite end*/
+    
     public void infiniteMove()
     {
+        
         if(getX() < 0)
         {
             setLocation(getWorld().getWidth(), getY());
@@ -52,6 +62,7 @@ public class Asteroid extends Actor
         }
     }
     
+    // checks if the asteroid colides with a bullet
     public void colide()
     {
         if(isTouching(Bullet.class))
@@ -68,6 +79,9 @@ public class Asteroid extends Actor
 
         }
     }
+    /* makes it so when the asteroid colides two smaller asteroids spawn in 
+    in opposite directions
+    */
     public void splitOff()
     {
         SmallAsteroid smallAstOne = new SmallAsteroid(-3);

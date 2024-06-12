@@ -3,8 +3,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Bullet here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Class the ship uses to destroy asteroids
+ * 
+ * @author (Maksim Isayenka) 
+ * @version (2024-06-12)
  */
 public class Bullet extends Actor
 {
@@ -24,6 +26,8 @@ public class Bullet extends Actor
         inGame();
     }    
     
+    /*checks to see if the bullet is still in the game and if it is outside
+    it deletes it */
     public void inGame()
     {
         GreenfootImage img = getImage();

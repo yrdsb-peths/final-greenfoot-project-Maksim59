@@ -3,8 +3,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class StartButton here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Start button which basically launches the ship to space so that it can
+ * start shooting asteroids
+ * 
+ * @author (Maksim Isayenka) 
+ * @version (2024-06-12)
  */
 public class StartButton extends Actor
 {
