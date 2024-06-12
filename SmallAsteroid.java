@@ -60,13 +60,13 @@ public class SmallAsteroid extends Actor
     {
         if(isTouching(Bullet.class))
         {
-            setLocation(getX(), 0);
             removeTouching(Bullet.class);
             MyWorld world = (MyWorld) getWorld();
-            world.increaseSmallScore();
+            world.increaseScore();
             breakSound.play();
+            world.increaseLevel();
             world.removeObject(this);
-            
+
         }
     }
     
