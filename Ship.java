@@ -88,10 +88,10 @@ public class Ship extends Actor
             regen();
         }
             
-        if(isTouching(smallAsteroid.class))
+        if(isTouching(SmallAsteroid.class))
         {
             MyWorld world = (MyWorld) getWorld();
-            removeTouching(smallAsteroid.class);
+            removeTouching(SmallAsteroid.class);
             world.decreaseLives();
             world.addAsteroid();
             regen();
