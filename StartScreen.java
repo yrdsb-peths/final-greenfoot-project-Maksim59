@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class StartScreen here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ *@author (Maksim Isayenka) 
+ * @version (2024-06-12)
  */
 public class StartScreen extends World
 {
@@ -20,14 +20,14 @@ public class StartScreen extends World
         prepare();
     }
     
+    
+    public void act()
+    {
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    public void act()
-    {
-    }
-    
     private void prepare()
     {
 

@@ -27,6 +27,7 @@ public class Ship extends Actor
     public void act()
     {
         MyWorld world = (MyWorld) getWorld();
+        
         // key controls for the ship
         if(Greenfoot.isKeyDown("a"))
         {
@@ -66,7 +67,31 @@ public class Ship extends Actor
         {
             world.gameOver();
         }
+        infiniteMove();
+    }
+    
+    /*allows the ship to not stop at the end of the screen and instead
+    switch sides and keep moving.
+    */
+    public void infiniteMove()
+    {
         
+        if(getX() < 0)
+        {
+            setLocation(getWorld().getWidth(), getY());
+        }
+        if(getX() > getWorld().getWidth())
+        {
+            setLocation(0, getY());
+        }
+        if(getY() < 0)
+        {
+            setLocation(getX(), getWorld().getHeight());
+        }
+        if(getY() > getWorld().getHeight())
+        {
+            setLocation(getX(), 0);
+        }
     }
     
     //shoot method for the ship which shoots a bullet
